@@ -1,0 +1,67 @@
+---
+layout: base.liquid
+title: Home
+description: Schedule, location, and snacks for Home Group 2025
+date: 2024-09-16
+---
+{% for date in dates %}
+{% endfor %}
+<div class="container">
+  <table>
+    <caption>
+      Home Group 2025
+    </caption>
+    <thead>
+      <tr>
+        <th class="col-date" scope="col">Date</th>
+        <th class="col-host" scope="col">Host</th>
+        <th class="col-snack" scope="col">Snack</th>
+        <th class="col-study" scope="col">Study</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for date in dates %}
+        <tr data-date="{{ date.date | date: "%Y-%m-%d" }}">
+          <td>{{ date.date | date: '%b %-d' }}</td>
+          <td>
+            {% if date.address %}
+              <a href="https://maps.google.com/?q={{ date.address | replace: ' ', '%20'}}" target="_blank">
+            {% endif %}
+            {{ date.host }}
+            {% if date.address %}
+              </a>
+            {% endif %}
+          </td>
+          <td>
+            {% if date.snack %}
+              {{ date.snack }}
+            {% else %}
+              {% assign subject = 'Home Group Snacks - ' | append: date.date %}
+              {% assign body = 'I will bring snacks to Home Group on ' | append: date.date %}
+              <a
+                href="mailto:hale.adh@gmail.com?subject={{ subject | replace: ' ', '%20' }}&body={{ body | replace: ' ', '%20' }}"
+                title="volunteer"
+              >
+                +
+              </a>
+            {% endif %}
+          </td>
+          <td>
+            <div class="doc-links">
+              {% if date.doc %}
+                <a href="{{ date.doc }}" target="_blank" title="doc">
+                  {% svg 'icon/word.svg' %}
+                </a>
+              {% endif %}
+              {% if date.pdf %}
+                <a href="{{ date.pdf }}" target="_blank" title="pdf">
+                  {% svg 'icon/pdf.svg' %}
+                </a>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

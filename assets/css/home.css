@@ -1,0 +1,8 @@
+.doc-links {
+	background: red;
+	display: flex;
+	svg {
+		width: 1.5rem;
+		height: auto;
+	}
+}

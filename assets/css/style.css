@@ -1,0 +1,94 @@
+@import './media.css';
+@import './table.css';
+@import './typography.css';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+:root {
+	--color-light-muted: #d2ccbd;
+	--color-light: #e7e3d9;
+	--color-light-intense: #f3f3f3;
+
+	--color-dark-muted: #2b303b;
+	--color-dark: #20242c;
+	--color-dark-intense: #121721;
+
+	--color-primary-muted: #336999;
+	--color-primary: #225581;
+	--color-primary-intense: #194266;
+
+	--color-accent-muted: #ffd480;
+	--color-accent: #ffc34d;
+	--color-accent-intense: #ffb31a;
+
+	color-scheme: light;
+	--color-text-muted: #5c6770;
+	--color-text: var(--color-dark);
+	--color-text-intense: var(--color-dark-intentse);
+
+	--color-ui-intense: #9da7af;
+	--color-ui: #b9c0c6;
+	--color-ui-muted: #d6dade;
+
+	--color-background-muted: var(--color-light-muted);
+	--color-background: var(--color-light);
+	--color-background-intense: var(--color-light-intense);
+	--color-background-card: var(--color-light-intense);
+
+	--color-link-default: #1565c0;
+	--color-link-hover: #0d47a1;
+	--color-link-visited: #7b1fa2;
+
+	--color-shadow-intense: rgba(0, 0, 0, 0.2);
+	--color-shadow: rgba(0, 0, 0, 0.1);
+	--color-shadow-muted: rgba(0, 0, 0, 0.05);
+
+	--border-radius: 4px;
+	--border-width: 2px;
+	--space-sm: 1rem;
+	--space-md: 2rem;
+	--space-lg: 4rem;
+	--space-xl: 6rem;
+
+	--font-sans: 'Dana Library Hand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+		Cantarell, 'Helvetica Neue', sans-serif;
+	--font-monospace: 'SFMono-Regular', Andale Mono, Consolas, 'Liberation Mono', Menlo, monospace;
+	--font-serif: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+}
+html {
+	font-size: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-sans);
+	line-height: 1.5;
+	color: var(--color-text);
+	background-color: var(--color-background);
+	height: 100%;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	background-image: url('/assets/img/beige-paper.png');
+}
+.container {
+	max-width: 40rem;
+	margin: 0 auto;
+	padding: var(--space-md) var(--space-sm);
+}
+.doc-links {
+	display: flex;
+	gap: 0.5rem;
+	a {
+		padding: 0.25rem;
+	}
+	svg {
+		width: 1rem;
+		height: auto;
+	}
+}
