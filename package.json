@@ -6,5 +6,8 @@
 	"devDependencies": {
 		"@11ty/eleventy": "^4.0.0-alpha.4",
 		"@11ty/eleventy-img": "^6.0.4"
+	},
+	"engines": {
+		"node": "22"
 	}
 }
