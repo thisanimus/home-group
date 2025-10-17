@@ -1,6 +1,7 @@
 {
 	"type": "module",
 	"scripts": {
+		"build": "npx @11ty/eleventy",
 		"dev": "npx @11ty/eleventy --serve --quiet"
 	},
 	"devDependencies": {
@@ -8,6 +9,6 @@
 		"@11ty/eleventy-img": "^6.0.4"
 	},
 	"engines": {
-		"node": "22"
+		"node": "20"
 	}
 }
